@@ -4,12 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-flake8 = "*"
-autopep8 = "*"
+pylint = "*"
 
 [packages]
 pyqt5 = "==5.15.0"
 requests = "==2.24.0"
+
 
 [requires]
 python_version = "3.8"
