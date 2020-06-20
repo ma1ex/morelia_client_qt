@@ -1,17 +1,15 @@
 # Morelia Qt - мессенджер (клиент) для платформы Windows #
------------------------------------------------------------
 
-## В репозитории 2 бранча: ##
+## В репозитории 2 бранча ##
 
 [master](https://github.com/MoreliaTalk/morelia_client_qt/tree/master) - Основная ветка.
 
 [develop](https://github.com/MoreliaTalk/morelia_client_qt/tree/develop) - Ветка для разработчиков.
 
-## В разработке применяется: ##
+## В разработке применяется ##
 
 * [Python 3.8](https://www.python.org/) - язык программирования
 * [PyQt5](https://www.riverbankcomputing.com/software/pyqt/) как основной фронтед фреймворк
-
 
 ## Установка ##
 
@@ -21,58 +19,81 @@
 
 Настроить Git или GitHub Desktop введя свои `username` и `email` от аккаунта созданного на [github](https://www.github.com).
 
+## Форк репозитория Morelia Qt ##
+
 Форкнуть к себе репозиторий Morelia Qt перейдя по ссылке [Fork](https://github.com/MoreliaTalk/morelia_client_qt/fork).
 
-Клонировать репозиторий к себе на локальный компьютер [Clone](https://github.com/MoreliaTalk/morelia_client_qt.git).
-```
-git clone https://github.com/MoreliaTalk/morelia_client_qt.git
+Клонировать форкнутый репозиторий к себе на локальный компьютер
+
+```cmd
+git clone https://github.com/{username}/morelia_client_qt.git
 cd morelia_client_qt
 ```
 
-Добавит свой форк. Заменить `{username}` на свой username созданный в гитхабе.
-```
-git remote add fork https://github.com/{username}/morelia_client_qt.git
+Переключаемся на ветку develop
+
+```cmd
+git checkout develop
 ```
 
-Создать виртуальное окружение (предварительно установить pipenv).
+Синхронизируем свой форк с оригинальным репозиторием `upstream` Morelia Qt
+
+```cmd
+git remote add upstream https://github.com/MoreliaTalk/morelia_client_qt.git
 ```
+
+Проверяем появились ли репозиторий `upstream` в списке удалённых репозиториев
+
+```cmd
+git remote -v
+> origin    https://github.com/{username}/morelia_client_qt.git (fetch)
+> origin    https://github.com/{username}/morelia_client_qt.git (push)
+> upstream  https://github.com/MoreliaTalk/morelia_client_qt.git (fetch)
+> upstream  https://github.com/MoreliaTalk/morelia_client_qt.git (push)
+```
+
+## Создание пулл-реквеста для внесенния изменений в develop-ветку Morelia Qt ##
+
+Получение последних изменнений из develop-ветки Morelia Qt
+
+```cmd
+git pull upstream develop
+```
+
+Отправка изменений в develop-ветку своего форка
+
+```cmd
+git push
+```
+
+Для создания пулл-реквеста, необходимо перейти на [GitHub](https://www.github.com), выбрать свой форк и в правом меню нажать на `New pull request`, после чего выбрать бранч из которого будет производится перенос изменений в develop-ветку Morelia Qt и нажать `Create pull request`.
+
+## Настройка виртуального окружения Pipenv ##
+
+Если не установлен pipenv
+
+```cmd
+python -m pip install pipenv
+```
+
+Создать виртуальное окружение в директории с проектом
+
+```cmd
 pipenv shell
 ```
 
-Установите все необходимые библиотеки
-```
+Установить все требуемые библиотеки из Pipfile
+
+```cmd
 pipenv update
-```
-
-Если используется pip, то установить библиотеки следующим образом
-```
-pip install -r requirements.txt
-```
-
-Создаем свой бранч со своим именем
-```
-git branch {имя бранча}
-```
-
-### Начинай кодить! ###
-
-Для добавления своего кода в ветку [develop](https://github.com/MoreliaTalk/morelia_client_qt/tree/develop)
-```
-git pull request origin develop
 ```
 
 ## Требования к стилю кода ##
 
 Перед началом работы рекомендуется прочитать [PEP 8 - руководство по написанию кода на Python](https://pythonworld.ru/osnovy/pep-8-rukovodstvo-po-napisaniyu-koda-na-python.html). Обязательно использовать линтер (flake8, pylint или подобный).
 
-### дополнительные требования к коду ###
-Отсутствуют
 
-
-
----------------------------------------------------------------------------------------------------------------------
-
-## Контакты: ##
+## Контакты ##
 
 [Telegram](https://t.me/joinchat/LImHShzAmIWvpMxDTr5Vxw) - группа где обсуждаются насущные вопросы.
 
