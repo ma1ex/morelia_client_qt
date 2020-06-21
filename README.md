@@ -85,7 +85,7 @@ pipenv shell
 Установить все требуемые библиотеки из Pipfile
 
 ```cmd
-pipenv update
+pipenv install --ignore-pipfile
 ```
 
 ## Требования к стилю кода ##
