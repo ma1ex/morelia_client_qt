@@ -55,7 +55,7 @@ class ExampleApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.chanel = 'hub'
             self.channelEdit.setText('hub')
         response = requests.get(self.url + '/get_messages',
-                                params={'after': 0.0, 'chanel': self.chanel}
+                                params={'after': self.last_timestamp}
                                 )
         messages = response.json()['messages']
 
@@ -63,7 +63,7 @@ class ExampleApp(QtWidgets.QMainWindow, Ui_MainWindow):
             dt = datetime.datetime.fromtimestamp(message['timestamp'])
             dt = dt.strftime('%H:%M:%S %d/%m/%Y')
             self.textBrowser.append('<div class="container"><h3>' +
-                                    f'@{message["chanel"]}: ' +
+                                    '@hub: ' +
                                     message['username'] +
                                     '</h3><p>' +
                                     message['text'] +
@@ -104,7 +104,7 @@ class ExampleApp(QtWidgets.QMainWindow, Ui_MainWindow):
         their chat messages
         """
         response = requests.get(self.url + '/get_messages',
-                                params={
+                                json={
                                     'after': self.last_timestamp,
                                     'chanel': self.chanel
                                     }
@@ -115,7 +115,7 @@ class ExampleApp(QtWidgets.QMainWindow, Ui_MainWindow):
             dt = datetime.datetime.fromtimestamp(message['timestamp'])
             dt = dt.strftime('%H:%M:%S %d/%m/%Y')
             self.textBrowser.append('<div class="container"<h3>' +
-                                    f'@{message["chanel"]}: ' +
+                                    '@hub: ' +
                                     message['username'] +
                                     '</h3><p>'+message['text'] +
                                     '</p><span class="date-right">' +
