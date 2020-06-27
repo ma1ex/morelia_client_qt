@@ -228,6 +228,9 @@ QPushButton:pressed{
       <height>791</height>
      </rect>
     </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
     <property name="whatsThis">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Table&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
@@ -273,6 +276,34 @@ background-color:rgb(152, 255, 55);
    <zorder>lineEdit</zorder>
    <zorder>pushButton_enter</zorder>
   </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>480</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuProfile">
+     <property name="title">
+      <string>Profile</string>
+     </property>
+     <addaction name="actionServer_settings"/>
+    </widget>
+    <addaction name="menuProfile"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <action name="actionServer_settings">
+   <property name="text">
+    <string>Server settings...</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
