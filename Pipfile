@@ -5,10 +5,6 @@ verify_ssl = true
 
 [dev-packages]
 flake8 = "*"
-autopep8 = "*"
-sphinx = "*"
-rstcheck = "*"
-doc8 = "*"
 
 [packages]
 pyqt5 = "==5.15.0"
